@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1>vue ui components</h1>
+      <h1>welcome!</h1>
       <ul class="link-list">
           <li>
               <router-link to="/datepickerTab">Go datepicker</router-link>

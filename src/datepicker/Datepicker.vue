@@ -45,8 +45,21 @@
                dateString: ''
             }
         },
+        props:{
+            dateStr:{
+                type: String
+            }
+        },
+        // computed:{
+        //     dateString(){
+        //         return this.dateToShow?this.dateToShow:'';
+        //     }
+        // },
         mounted(){
+            this.dateString=this.dateStr || '';
             this.init();
+            console.dir(this);
+            console.dir(this.dateStr);
         },
         methods: {
             init(){
@@ -107,7 +120,6 @@
                     this.showFlag=false;
                     this.dateString=[this.year,this.month,this.date].join('-');
                 }
-                
             }
 
 
