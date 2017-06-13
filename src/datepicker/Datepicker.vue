@@ -55,11 +55,31 @@
         //         return this.dateToShow?this.dateToShow:'';
         //     }
         // },
+        beforeCreate(){
+            console.dir('beforecreate');
+        },
+        created(){
+            console.dir('created');
+        },
+        beforeMount(){
+            console.dir('beforemount');
+        },
         mounted(){
             this.dateString=this.dateStr || '';
             this.init();
-            console.dir(this);
-            console.dir(this.dateStr);
+            console.dir('mounted');
+        },
+        beforeUpdate(){
+            console.dir('befroeupdate');
+        },
+        updated(){
+            console.dir('updated');
+        },
+        beforeDestory(){
+            console.dir('beforedestory');
+        },
+        destoryed(){
+            console.dir('destoryed');
         },
         methods: {
             init(){
