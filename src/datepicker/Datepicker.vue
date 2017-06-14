@@ -1,6 +1,6 @@
 <template>
      <div class="d-container">
-        <input class="p-input" v-on:click="show()" v-model="dateString" />
+        <div class="p-input" v-on:click="show()">{{dateString}}</div>
         <div class="p-content" v-show="showFlag">
             <div>
                 <span class="year-op" v-on:click="yearLeft()">&lt;&lt;</span>
