@@ -39,7 +39,10 @@
             line-height: 80px;
             text-align: center;
             background: #edf1f2;
-            color: #333;
+            background: linear-gradient(to right, #200909 0%, #442020 100%);
+            h2{
+                color: #fff;
+            }
         }
         ul {
             li {
@@ -64,7 +67,6 @@
         height: 100%;
         .content-box {
             height: calc(100% - 80px);
-            ;
             margin-left: 260px;
             padding-left: 30px;
             color: #333;
@@ -79,12 +81,16 @@
         background: #f9f9f9;
         box-shadow: 0 0 0 2px #eee;
         .tab-head {
-            posotion: relative;
+            position: relative;
             height: 80px;
             line-height: 80px;
             padding-left: 10px;
             background: #edf1f2;
+            background: linear-gradient(to right, #200909 0%, #442020 100%);
             color: #333;
+            h2{
+                color: #fff;
+            }
             .view-wap {
                 float: right;
                 padding: 0 20px;
