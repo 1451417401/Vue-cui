@@ -54,12 +54,17 @@
                     background: #d8dbdc;
                     box-shadow: 0 0 0 2px #eee inset;
                 }
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    color: #333;
+                }
+
             }
         }
-        a {
-            text-decoration: none;
-            color: #333;
-        }
+        
     }
 
     .nav-content {
@@ -113,18 +118,16 @@
                     box-shadow: 0 0 0 2px #eee inset;
                 }
                 a {
-                    display: inline-block;
+                    display: block;
                     width: 100%;
                     height: 100%;
+                    text-decoration: none;
+                    color: #333;
                 }
             }
             &.list-show {
                 display: block;
             }
-        }
-        a {
-            text-decoration: none;
-            color: #333;
         }
     }
     .nav-content {
