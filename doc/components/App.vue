@@ -39,7 +39,7 @@
             line-height: 80px;
             text-align: center;
             background: #edf1f2;
-            background: linear-gradient(to right, #200909 0%, #442020 100%);
+            background: linear-gradient(to right, #939393 0%, #442020 100%);
             h2{
                 color: #fff;
             }
@@ -86,7 +86,7 @@
             line-height: 80px;
             padding-left: 10px;
             background: #edf1f2;
-            background: linear-gradient(to right, #200909 0%, #442020 100%);
+            background: linear-gradient(to right, #939393 0%, #442020 100%);
             color: #333;
             h2{
                 color: #fff;
