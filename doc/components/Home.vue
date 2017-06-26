@@ -23,6 +23,8 @@
      
 </template>
 <style lang="scss">
+
+
     .link-list{
         margin-top: 20px;
         li{
