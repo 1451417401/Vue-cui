@@ -5,6 +5,7 @@ import App from './components/App';
 import Home from './components/Home';
 import DatepickerTab from './components/DatepickerTab';
 import DialogTab from './components/DialogTab';
+import ModalTab from './components/ModalTab';
 import Ing from './components/Ing';
 
 Vue.use(VueRouter)
@@ -13,6 +14,7 @@ const routes = [
     { path: '/', component: Home },
     { path: '/datepickerTab', component: DatepickerTab },
     { path: '/dialogTab', component: DialogTab },
+    { path: '/modalTab', component: ModalTab },
     { path: '/*', component: Ing }
 ]
 
