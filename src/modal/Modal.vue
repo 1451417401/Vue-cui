@@ -22,6 +22,9 @@
                 type: Function
             }
         },
+        created(){
+            console.log('Modal created');
+        },
         // computed:{
         //     activeComputed:{
         //         get:function(){

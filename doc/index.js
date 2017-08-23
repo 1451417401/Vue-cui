@@ -7,7 +7,7 @@ import DatepickerTab from './components/DatepickerTab';
 import DialogTab from './components/DialogTab';
 import ModalTab from './components/ModalTab';
 import Ing from './components/Ing';
-
+debugger;
 Vue.use(VueRouter)
 
 const routes = [
