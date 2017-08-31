@@ -32,8 +32,7 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
         //'**/**.vue': ['webpack','coverage'],
-        //'**/test/**.js': ['webpack','sourcemap']
-        '**/test/**.js': ['webpack']
+        '**/test/**.js': ['webpack','sourcemap']
     },
 
 
