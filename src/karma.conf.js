@@ -1,14 +1,14 @@
 // Karma configuration
 // Generated on Thu Aug 31 2017 14:06:29 GMT+0800 (CST)
 
-var webpack=require('webpack');
+const webpack=require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
-
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -17,7 +17,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      '**/!(Contain).vue',
+      //'**/!(Contain).vue',
       '**/test/**.js'
     ],
 
@@ -31,19 +31,26 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        '**/**.vue': ['webpack','coverage'],
-        '**/test/**.js': ['webpack']
+        //'**/**.vue': ['webpack','coverage'],
+        '**/test/**.js': ['webpack','sourcemap']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress','coverage'],
+    reporters: ['spec', 'coverage-istanbul'],
 
-    coverageReporter: {
-      type : 'html',
-      dir : 'coverage/'
+    coverageIstanbulReporter: {
+      reports: ['html', 'lcovonly', 'text-summary'],
+      dir: './coverage',
+      fixWebpackSourcePaths: true,
+      'report-config': {
+        html: {
+          // outputs the report in ./coverage/html
+          subdir: 'html'
+        }
+      }
     },
 
 
@@ -84,39 +91,49 @@ module.exports = function(config) {
         },
         module: {
             rules: [
-                // {
-                //     test: /\.(scss|css)$/,
-                //     use: ['style-loader', 'css-loader', 'sass-loader'],
-                //     use: ExtractTextPlugin.extract({
-                //         use: ['css-loader', 'sass-loader'],
-                //         fallback: 'style-loader',
-                //     }),
-                // },
+                {
+                    test: /\.(scss|css)$/,
+                    use: ['style-loader', 'css-loader', 'sass-loader'],
+                    use: ExtractTextPlugin.extract({
+                        use: ['css-loader', 'sass-loader'],
+                        fallback: 'style-loader',
+                    }),
+                },
                 {
                     test: /\.js$/,
-                    exclude: /(node_modules)\//,
+                    exclude: /node_modules/,
                     use: {
                         loader: 'babel-loader',
                     }
                 }, {
+                    test: /\.(js)$/,
+                    loader: 'istanbul-instrumenter-loader',
+                    exclude: /node_modules/,
+                    //include: /src|packages/,
+                    enforce: 'post',
+                    options: {
+                      esModules: true
+                    }
+                  }, {
                     test: /\.vue$/,
-                    loader: 'vue-loader',
-                    // options: {
-                    //     loaders: {
-                    //         css: ExtractTextPlugin.extract({
-                    //             use: ['css-loader'],
-                    //             fallback: 'vue-style-loader'
-                    //         }),
-                    //         scss: ExtractTextPlugin.extract({
-                    //             use: ['css-loader', 'sass-loader'],
-                    //             fallback: 'vue-style-loader'
-                    //         })
-                    //     },
-                    //     sourceMap: true
-                    // }
-                }
+                    loaders: [{
+                      loader: 'vue-loader',
+                      options: {
+                        preLoaders: {
+                          js: 'istanbul-instrumenter-loader?esModules=true'
+                        }
+                      }
+                    }]
+                  },
             ]
         },
+        plugins: [
+        new webpack.DefinePlugin({
+          'process.env': {
+            NODE_ENV: '"production"'
+          }
+        })
+      ]
       
     },
     webpackMiddleware: {
