@@ -74,7 +74,7 @@ module.exports = function(config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     //browsers: ['Chrome', 'PhantomJS'],
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
@@ -105,16 +105,18 @@ module.exports = function(config) {
                     use: {
                         loader: 'babel-loader',
                     }
-                }, {
-                    test: /\.(js)$/,
-                    loader: 'istanbul-instrumenter-loader',
-                    exclude: /node_modules/,
-                    //include: /src|packages/,
-                    enforce: 'post',
-                    options: {
-                      esModules: true
-                    }
-                  }, {
+                }, 
+                // {
+                //     test: /\.(js)$/,
+                //     loader: 'istanbul-instrumenter-loader',
+                //     exclude: /node_modules/,
+                //     include: /test/,
+                //     enforce: 'post',
+                //     options: {
+                //       esModules: true
+                //     }
+                //   }, 
+                  {
                     test: /\.vue$/,
                     loaders: [{
                       loader: 'vue-loader',
