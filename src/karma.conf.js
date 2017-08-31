@@ -9,9 +9,6 @@ module.exports = function(config) {
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
-    plugins: [
-      'karma-sourcemap-loader'
-    ],
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -35,7 +32,8 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
         //'**/**.vue': ['webpack','coverage'],
-        '**/test/**.js': ['webpack','sourcemap']
+        //'**/test/**.js': ['webpack','sourcemap']
+        '**/test/**.js': ['webpack']
     },
 
 
