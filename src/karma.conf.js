@@ -94,10 +94,6 @@ module.exports = function(config) {
                 {
                     test: /\.(scss|css)$/,
                     use: ['style-loader', 'css-loader', 'sass-loader'],
-                    use: ExtractTextPlugin.extract({
-                        use: ['css-loader', 'sass-loader'],
-                        fallback: 'style-loader',
-                    }),
                 },
                 {
                     test: /\.js$/,
@@ -139,8 +135,8 @@ module.exports = function(config) {
       
     },
     webpackMiddleware: {
-          noInfo: true,
-          stats: 'errors-only'
-        }
+      noInfo: true,
+      stats: 'errors-only'
+    }
   })
 }
