@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/1451417401/Vue-cui.svg?branch=master)](https://travis-ci.org/1451417401/Vue-cui)
+
 vue common ui compoents
 =========================
 
