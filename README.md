@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/1451417401/Vue-cui.svg?branch=master)](https://travis-ci.org/1451417401/Vue-cui)
+[![Build Status](https://travis-ci.org/1451417401/Vue-cui.svg?branch=master)](https://travis-ci.org/1451417401/Vue-cui) [![Coverage Status](https://coveralls.io/repos/github/1451417401/Vue-cui/badge.svg?branch=master)](https://coveralls.io/github/1451417401/Vue-cui?branch=master)
 
 vue common ui compoents
 =========================
